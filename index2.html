@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01- Emmet | Tech Edition</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto+Mono:wght@300;500&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Fondo tecnológico: Negro con cuadrícula verde oscuro */
+            background-color: #050a05;
+            background-image: 
+                linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: white;
+            font-family: 'Roboto Mono', monospace;
+            overflow: hidden;
+        }
+
+        /* Efecto de resplandor en el fondo */
+        body::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 255, 65, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        main {
+            text-align: center;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 5rem;
+            margin: 0;
+            color: #00ff41;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            /* Efecto Neón */
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.7), 
+                         0 0 20px rgba(0, 255, 65, 0.5);
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        img {
+            border-radius: 50%;
+            border: 4px solid #00ff41;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.4);
+            transition: transform 0.5s ease;
+            background-color: #111;
+        }
+
+        img:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        /* Botón de volver con estilo tecnológico */
+        .bt-home {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #00ff41;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 255, 65, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .bt-home:hover {
+            background: #00ff41;
+            box-shadow: 0 0 20px #00ff41;
+        }
+
+        .bt-home svg {
+            fill: #00ff41;
+            transition: fill 0.3s ease;
+        }
+
+        .bt-home:hover svg {
+            fill: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="./index.html" class="bt-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 256 256">
+            <path d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z"></path>
+        </svg>
+    </a>
+
+    <main>
+        <h1>01- EMMET</h1>
+        <h4>Workflow - Markup & Styling</h4>
+        <img src="./emmet-svgrepo-com.svg" width="250" height="250" alt="Emmet Logo">
+    </main>
+</body>
+
+</html>
