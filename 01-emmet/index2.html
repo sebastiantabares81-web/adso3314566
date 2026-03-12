@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01- Emmet | Tech Edition</title>
+    <link rel="stylesheet" href="../public/css/01-emmet.css">
+   
+</head>
+
+<body>
+    <a href="../index.html" class="bt-home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#00ff41" viewBox="0 0 256 256">
+            <path d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z"></path>
+        </svg>
+    </a>
+
+    <main>
+        <h1>01- EMMET</h1>
+        <h4>Workflow - Markup & Styling</h4>
+        <img src="../public/imgs/emmet-svgrepo-com.svg" width="200" height="200" alt="Emmet Logo" class="logo-emmet">
+
+        <div class="card">
+            <h2>Nesting</h2>
+            <span class="example-label">Example</span>
+            <p>ul>li>a 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Sibling</h2>
+            <span class="example-label">Example</span>
+            <p>section+header+nav 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;section&gt;&lt;/section&gt;
+&lt;header&gt;&lt;/header&gt;
+&lt;nav&gt;&lt;/nav&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Multiplication</h2>
+            <span class="example-label">Example</span>
+            <p>ul>li*3 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Class</h2>
+            <span class="example-label">Example</span>
+            <p>div.contenedor 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;div class="contenedor"&gt;&lt;/div&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Classes</h2>
+            <span class="example-label">Example</span>
+            <p>div.clase1.clase2.clasen 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;div class="clase1 clase2 clasen"&gt;&lt;/div&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Id</h2>
+            <span class="example-label">Example</span>
+            <p>nav#menu 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;nav id="menu"&gt;&lt;/nav&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Text</h2>
+            <span class="example-label">Example</span>
+            <p>div{Lorem Ipsum Dolor} 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;div&gt;Lorem Ipsum Dolor&lt;/div&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Custom Attribute</h2>
+            <span class="example-label">Example</span>
+            <p>a[href=www.google.com] 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;a href="www.google.com"&gt;&lt;/a&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Item Numbering</h2>
+            <span class="example-label">Example</span>
+            <p>ul>li.num$*3 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;ul&gt;
+  &lt;li class="num1"&gt;&lt;/li&gt;
+  &lt;li class="num2"&gt;&lt;/li&gt;
+  &lt;li class="num3"&gt;&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Reverse Numbering</h2>
+            <span class="example-label">Example</span>
+            <p>ul>li.num$@-*3 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;ul&gt;
+  &lt;li class="num3"&gt;&lt;/li&gt;
+  &lt;li class="num2"&gt;&lt;/li&gt;
+  &lt;li class="num1"&gt;&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Base Numbering</h2>
+            <span class="example-label">Example</span>
+            <p>ul>li.num$@3*4 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;ul&gt;
+  &lt;li class="num3"&gt;&lt;/li&gt;
+  &lt;li class="num4"&gt;&lt;/li&gt;
+  &lt;li class="num5"&gt;&lt;/li&gt;
+  &lt;li class="num6"&gt;&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Climb Up</h2>
+            <span class="example-label">Example</span>
+            <p>section>article>div^p 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;section&gt;
+  &lt;article&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/article&gt;
+  &lt;p&gt;&lt;/p&gt;
+&lt;/section&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Grouping</h2>
+            <span class="example-label">Example</span>
+            <p>(header>nav)(section>article) 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;header&gt;
+  &lt;nav&gt;&lt;/nav&gt;
+&lt;/header&gt;
+&lt;section&gt;
+  &lt;article&gt;&lt;/article&gt;
+&lt;/section&gt;</div>
+        </div>
+
+        <div class="card">
+            <h2>Lorem</h2>
+            <span class="example-label">Example</span>
+            <p>lorem 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</div>
+        </div>
+
+        <div class="card">
+            <h2>HTML Documents</h2>
+            <span class="example-label">Example</span>
+            <p>html:5 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;!DOCTYPE html&gt;
+            &lt;html lang="en"&gt;
+            &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;title&gt;Document&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </div>
+        </div>
+
+        <div class="card">
+            <h2>Meta Tags</h2>
+            <span class="example-label">Example</span>
+            <p>meta:vp 🔷⇥</p>
+            <span class="example-label">Result</span>
+            <div class="result-box">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</div>
+        </div>
+
+        <!-- CHALLENGE: Bootstrap Navbar -->
+        <div class="card" style="border-color: #ffaa00;">
+            <h2>⚡ CHALLENGE: Bootstrap Navbar</h2>
+            <span class="example-label">📋 Código a replicar</span>
+            <div class="result-box" style="white-space: pre-wrap; font-size: 0.8rem; max-height: 300px; overflow-y: auto;">&lt;header id="header"&gt;
+    &lt;nav class="navbar navbar-inverse"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="navbar-header"&gt;
+                &lt;button type="button" class="navbar-toggle"&gt;
+                    &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                    &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;a class="navbar-brand" href="index.php"&gt;
+                    &lt;img src="imgs/logo.png" alt=""&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="collapse"&gt;
+                &lt;ul class="nav navbar-nav"&gt;
+                    &lt;li&gt;
+                        &lt;a class="link" href="index.html"&gt;Inicio&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class="active link"&gt;
+                        &lt;a href="login.html"&gt;Ingresar&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a class="link" href="registro.html"&gt;Registrarse&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a class="link" href="contacto.html"&gt;Contacto&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;</div>
+            
+            <span class="example-label">💡 Comando Emmet (una línea)</span>
+            <div class="result-box" style="white-space: pre-wrap; background-color: rgba(0,0,0,0.8);">header#header>nav.navbar.navbar-inverse>.container>.navbar-header>button.navbar-toggle[type=button]>span.sr-only{Toggle navigation}+span.icon-bar*3^^a.navbar-brand[href=index.php]>img[src=imgs/logo.png alt]^^^.collapse>ul.nav.navbar-nav>li>a.link[href=index.html]{Inicio}+li.active.link>a[href=login.html]{Ingresar}+li>a.link[href=registro.html]{Registrarse}+li>a.link[href=contacto.html]{Contacto}</div>
+            
+            <span class="example-label">🔧 Comando formateado</span>
+            <div class="result-box" style="white-space: pre-wrap; background-color: rgba(0,0,0,0.8); font-size: 0.8rem; line-height: 1.4;">header#header>
+nav.navbar.navbar-inverse>
+.container>
+.navbar-header>
+button.navbar-toggle[type=button]>
+span.sr-only{Toggle navigation}+
+span.icon-bar*3^^^
+a.navbar-brand[href=index.php]>
+img[src=imgs/logo.png alt]^^^^
+.collapse>
+ul.nav.navbar-nav>
+li>
+a.link[href=index.html]{Inicio}+
+li.active.link>
+a[href=login.html]{Ingresar}+
+li>
+a.link[href=registro.html]{Registrarse}+
+li>
+a.link[href=contacto.html]{Contacto}</div>
+            
+            
+        </div>
+
+    </main>
+</body>
+
+</html>
