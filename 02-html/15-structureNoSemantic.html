@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/css/02-html.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #contenedor-estructura {
+            width: 420px;
+            margin: 30px auto;
+            border: 2px solid #999;
+            padding: 10px;
+            background: #f5f5f5;
+        }
+
+       
+        #contenedor-estructura > span {
+            display: block;
+            margin-bottom: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            color: #666;
+        }
+
+       
+        .caja {
+            border: 2px solid #999;
+            background: #dcdce6;
+            margin-bottom: 15px;
+            padding: 10px;
+            position: relative;
+        }
+
+        .encabezado {
+            height: 60px;
+        }
+
+        .contenido {
+            height: 120px;
+        }
+
+        .pie {
+            height: 50px;
+        }
+
+        
+        .texto {
+            text-align: center;
+            color: #666;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        
+        .etiqueta {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 11px;
+            font-family: monospace;
+            color: #333;
+            background: rgba(255,255,255,0.7);
+            padding: 2px 5px;
+        }
+
+        
+        .etiqueta-cierre {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            font-size: 11px;
+            font-family: monospace;
+            color: #333;
+            background: rgba(255,255,255,0.7);
+            padding: 2px 5px;
+        }
+    </style>
+</head>
+<body>
+    <main class="document-page"> 
+        <a href="../02-html/index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+        <header>
+            <h1>15 - Structure</h1>
+            <h2>Estructura con etiquetas no semanticas</h2>
+        </header>
+        <section>
+            
+            
+            <div id="contenedor-estructura">
+
+                <span>&lt;div id="contenedor"&gt;</span>
+
+                <div class="caja encabezado">
+                    <div class="etiqueta">&lt;div class="encabezado"&gt;</div>
+                    <div class="texto">encabezado</div>
+                    <div class="etiqueta-cierre">&lt;/div&gt;</div>
+                </div>
+
+                <div class="caja contenido">
+                    <div class="etiqueta">&lt;div class="contenido"&gt;</div>
+                    <div class="texto">contenido</div>
+                    <div class="etiqueta-cierre">&lt;/div&gt;</div>
+                </div>
+
+                <div class="caja pie">
+                    <div class="etiqueta">&lt;div class="pie"&gt;</div>
+                    <div class="texto">pie</div>
+                    <div class="etiqueta-cierre">&lt;/div&gt;</div>
+                </div>
+
+                <span>&lt;/div&gt;</span>
+
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>

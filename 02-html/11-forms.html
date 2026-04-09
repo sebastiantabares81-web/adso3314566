@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-Formularios</title>
+    <link rel="stylesheet" href="../src/css/02-html.css">
+    <style>
+        
+        .form-container {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgb(118, 108, 102);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3996dd;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+
+        button {
+            background-color: #3996dd;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #3996dd;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 1rem;
+            display: none;
+            text-align: center;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <main class="document-page"> 
+        <a href="../02-html/index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+        <header>
+            <h1>11-Formularios</h1>
+            <h2>Formulario de Registro de Usuario</h2>
+        </header>
+        <section>
+            <div class="form-container">
+                <form id="registroForm">
+                    
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                        <div class="error-message" id="error-nombre">Por favor ingresa tu nombre completo</div>
+                    </div>
+
+                   
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message" id="error-email">Por favor ingresa un email válido</div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="password">Contraseña *</label>
+                        <input type="password" id="password" name="password" required>
+                        <div class="error-message" id="error-password">La contraseña debe tener al menos 6 caracteres</div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar contraseña *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <div class="error-message" id="error-confirmPassword">Las contraseñas no coinciden</div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label for="fecha">Fecha de nacimiento *</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                        <div class="error-message" id="error-fecha">Por favor selecciona tu fecha de nacimiento</div>
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label style="display: inline-block; margin-left: 5px;">
+                            <input type="checkbox" id="terminos" name="terminos" required style="width: auto; margin-right: 8px;">
+                            Acepto los términos y condiciones *
+                        </label>
+                        <div class="error-message" id="error-terminos">Debes aceptar los términos y condiciones</div>
+                    </div>
+
+                    <button type="submit">Registrarse</button>
+                </form>
+
+                <div id="successMessage" class="success-message">
+                    ¡Registro exitoso! Bienvenido/a.
+                </div>
+            </div>
+
+            <script>
+                const form = document.getElementById('registroForm');
+                const successMessage = document.getElementById('successMessage');
+
+                form.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                    let isValid = true;
+
+                    
+                    const nombre = document.getElementById('nombre');
+                    const errorNombre = document.getElementById('error-nombre');
+                    if (nombre.value.trim() === '') {
+                        errorNombre.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        errorNombre.style.display = 'none';
+                    }
+
+                    
+                    const email = document.getElementById('email');
+                    const errorEmail = document.getElementById('error-email');
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email.value)) {
+                        errorEmail.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        errorEmail.style.display = 'none';
+                    }
+
+                    
+                    const password = document.getElementById('password');
+                    const errorPassword = document.getElementById('error-password');
+                    if (password.value.length < 6) {
+                        errorPassword.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        errorPassword.style.display = 'none';
+                    }
+
+                    
+                    const confirmPassword = document.getElementById('confirmPassword');
+                    const errorConfirmPassword = document.getElementById('error-confirmPassword');
+                    if (password.value !== confirmPassword.value) {
+                        errorConfirmPassword.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        errorConfirmPassword.style.display = 'none';
+                    }
+
+                  
+                    const fecha = document.getElementById('fecha');
+                    const errorFecha = document.getElementById('error-fecha');
+                    if (fecha.value === '') {
+                        errorFecha.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        errorFecha.style.display = 'none';
+                    }
+
+                   
+                    const terminos = document.getElementById('terminos');
+                    const errorTerminos = document.getElementById('error-terminos');
+                    if (!terminos.checked) {
+                        errorTerminos.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        errorTerminos.style.display = 'none';
+                    }
+
+                    
+                    if (isValid) {
+                        successMessage.style.display = 'block';
+                        form.reset();
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 3000);
+                    }
+                });
+            </script>
+        </section>
+    </main>
+</body>
+</html>

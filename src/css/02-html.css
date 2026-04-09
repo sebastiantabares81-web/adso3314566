@@ -419,3 +419,41 @@ body > main > section p {
         gap: 18px; 
     }
 }
+
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.challenge-table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed; 
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--p-orange-pale);
+}
+
+.challenge-table td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 45px; 
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.challenge-table td.emoji-cell {
+    background-color: var(--black-deep);
+    cursor: pointer;
+}
+
+
+.challenge-table td.emoji-cell:hover {
+    background-color: var(--p-orange-dark);
+    filter: brightness(1.2);
+}
+
+

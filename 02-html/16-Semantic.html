@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/css/02-html.css">
+    <style>
+        /* Estilos del cuadro de estructura semántica */
+        .contenedor-semantico {
+            width: 500px;
+            margin: 30px auto;
+            background: #e5e5e5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .contenedor-semantico header, 
+        .contenedor-semantico nav, 
+        .contenedor-semantico footer {
+            background: #6f6f6f;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 5px;
+        }
+
+        .contenido {
+            display: flex;
+            gap: 10px;
+            margin: 8px 0;
+        }
+
+        .contenedor-semantico article {
+            flex: 2;
+            background: #6f6f6f;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
+
+        .contenedor-semantico section {
+            margin-top: 10px;
+            background: #4a4a4a;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .contenedor-semantico aside {
+            flex: 1;
+            background: #6f6f6f;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main class="document-page"> 
+        <a href="../02-html/index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+        <header>
+            <h1>16 - Structure</h1>
+            <h2>Estructura con etiquetas semánticas</h2>
+        </header>
+        <section>
+            
+            <!-- Cuadro de estructura semántica -->
+            <div class="contenedor-semantico">
+
+                <header>&lt;header&gt;</header>
+
+                <nav>&lt;nav&gt;</nav>
+
+                <div class="contenido">
+
+                    <article>
+                        &lt;article&gt;
+
+                        <section>
+                            &lt;section&gt;
+                        </section>
+
+                    </article>
+
+                    <aside>
+                        &lt;aside&gt;
+                    </aside>
+
+                </div>
+
+                <footer>&lt;footer&gt;</footer>
+
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>
