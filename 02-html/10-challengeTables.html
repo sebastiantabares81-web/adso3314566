@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Challenge</title>
     <link rel="stylesheet" href="../src/css/02-html.css">
     <style>
-        .emoji-table {
-            margin: 20px auto;
+        .challenge-grid {
+            width: 100%;
+            max-width: 980px;
             border-collapse: collapse;
+            background-color: #2f2f31;
+            color: #fff;
+            table-layout: fixed;
         }
-        
-        .emoji-table td {
-            width: 50px;
-            height: 50px;
+
+        .challenge-grid td {
+            border: 3px solid #f0f0f0;
+            height: 62px;
             text-align: center;
             vertical-align: middle;
-            font-size: 24px;
+            font-size: 2rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .challenge-grid .fill {
+            background-color: #06080d;
         }
     </style>
 </head>
 <body>
-    <main class="document-page"> 
         <a href="../02-html/index.html" class="boton-volver">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
                 <path
@@ -29,93 +37,75 @@
                 </path>
             </svg>
         </a>
+    <main>
         <header>
-            <h1>10 - Challenge</h1>
-            <h2>Challenge emojis</h2>
+            <h1>10 - Challemge</h1>
+            <h2>Reto de tablas con emoji</h2>
         </header>
         <section>
-            
-            <table border="1" cellspacing="0" cellpadding="20" align="center" class="emoji-table">
-                
-                <!-- FILA 1 -->
-                <tr>
-                    <td colspan="4"></td>
-                    <td>😎</td>
-                    <td colspan="4"></td>
-                </tr>
-
-                <!-- FILA 2 -->
-                <tr>
-                    <td colspan="3"></td>
-                    <td>😎</td>
-                    <td rowspan="2">😎</td>
-                    <td>😎</td>
-                    <td colspan="3"></td>
-                </tr>
-
-                <!-- FILA 3 -->
-                <tr>
-                    <td colspan="2"></td>
-                    <td>😎</td>
-                    <td></td>
-                    <td>😎</td>
-                    <td colspan="2"></td>
-                </tr>
-
-                <!-- FILA 4 -->
-                <tr>
-                    <td colspan="2"></td>
-                    <td>😎</td>
-                    <td colspan="2">😎</td>
-                    <td>😎</td>
-                    <td colspan="2"></td>
-                </tr>
-
-                <!-- FILA 5 -->
-                <tr>
-                    <td></td>
-                    <td>😎</td>
-                    <td colspan="3">😎</td>
-                    <td></td>
-                    <td>😎</td>
-                    <td></td>
-                </tr>
-
-                <!-- FILA 6 -->
-                <tr>
-                    <td colspan="2"></td>
-                    <td>😎</td>
-                    <td colspan="2">😎</td>
-                    <td>😎</td>
-                    <td colspan="2"></td>
-                </tr>
-
-                <!-- FILA 7 -->
-                <tr>
-                    <td colspan="3"></td>
-                    <td>😎</td>
-                    <td></td>
-                    <td>😎</td>
-                    <td colspan="3"></td>
-                </tr>
-
-                <!-- FILA 8 -->
-                <tr>
-                    <td colspan="4"></td>
-                    <td>😎</td>
-                    <td>👻</td>
-                    <td>😎</td>
-                    <td colspan="2"></td>
-                </tr>
-
-                <!-- FILA 9 -->
-                <tr>
-                    <td colspan="5"></td>
-                    <td>😎</td>
-                    <td colspan="2"></td>
-                </tr>
+            <table class="challenge-grid">
+                <tbody>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td class="fill">👻</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td class="fill">👻</td>
+                        <td class="fill" rowspan="2">👻</td>
+                        <td class="fill">👻</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td class="fill">👻</td>
+                        <td></td>
+                        <td class="fill">👻</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td class="fill">👻</td>
+                        <td class="fill" colspan="3">👻</td>
+                        <td class="fill">👻</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="fill">👻</td>
+                        <td colspan="5" class="fill">👻</td>
+                        <td class="fill">👻</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td class="fill">👻</td>
+                        <td class="fill" colspan="3">👻</td>
+                        <td class="fill">👻</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td class="fill">👻</td>
+                        <td></td>
+                        <td class="fill">👻</td>
+                        <td colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4"></td>
+                        <td class="fill">👻</td>
+                        <td class="fill">👻</td>
+                        <td class="fill">👻</td>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"></td>
+                        <td class="fill">👻</td>
+                        <td colspan="3"></td>
+                    </tr>
+                </tbody>
             </table>
-            
         </section>
     </main>
 </body>
