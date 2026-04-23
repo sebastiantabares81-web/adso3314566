@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - CSS</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+</head>
+<body>
+    <div class="home-logo" onclick="goToHome()">
+        <span class="logo-text">⌂</span>
+    </div>
+
+    <div class="card">
+        <header>
+            <div class="profile-container">
+                <img src="../src/imgs/logo-css.png" alt="Juan Sebastian" class="profile-img">
+                <div class="status-badge"></div>
+            </div>
+            <h1>03 - CSS</h1>
+            <p class="name-title">Juan Sebastian Tabares Bueno</p>
+        </header>
+        
+        <div class="grid-menu">
+            <menu>
+                <h3>Reference 2.1</h3>
+            <a href="../03-css/01-document-style.html">
+                <div class="icon-circle">01</div>
+                <div class="menu-text">
+                    <h4>Document-Style</h4>
+                </div>
+            </a>
+            <a href="../03-css/02-css-file.html">
+                <div class="icon-circle">02</div>
+                <div class="menu-text">
+                    <h4>Css-File</h4>
+                </div>
+            </a>
+            <a href="../03-css/03-attr-style.html">
+                <div class="icon-circle">03</div>
+                <div class="menu-text">
+                    <h4>Attr-Style</h4>
+                </div>
+            </a>
+            <a href="../03-css/04-basic-selectors.html">
+                <div class="icon-circle">04</div>
+                <div class="menu-text">
+                    <h4>Basic-Selectors</h4>
+                </div>
+            </a>
+            <a href="../03-css/05-advanced-selectors.html">
+                <div class="icon-circle">05</div>
+                <div class="menu-text">
+                    <h4>Advanced-Selectors</h4>
+                </div>
+            </a>
+            <a href="../03-css/06-specificity.html">
+                <div class="icon-circle">06</div>
+                <div class="menu-text">
+                    <h4>Specificity</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">07</div>
+                <div class="menu-text">
+                    <h4>Inheritane</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">08</div>
+                <div class="menu-text">
+                    <h4>Relative-Units</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">09</div>
+                <div class="menu-text">
+                    <h4>Absolute-Units</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">10</div>
+                <div class="menu-text">
+                    <h4>Percentage-Units</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">11</div>
+                <div class="menu-text">
+                    <h4>Colors</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">12</div>
+                <div class="menu-text">
+                    <h4>Color-Alpha</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">13</div>
+                <div class="menu-text">
+                    <h4>Box-Model</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">14</div>
+                <div class="menu-text">
+                    <h4>Background</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">15</div>
+                <div class="menu-text">
+                    <h4>Position</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">16</div>
+                <div class="menu-text">
+                    <h4>Float</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">17</div>
+                <div class="menu-text">
+                    <h4>Visualization</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">18</div>
+                <div class="menu-text">
+                    <h4>Typography</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">19</div>
+                <div class="menu-text">
+                    <h4>Text</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">20</div>
+                <div class="menu-text">
+                    <h4>Pseudoclasses</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">21</div>
+                <div class="menu-text">
+                    <h4>Lists</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">22</div>
+                <div class="menu-text">
+                    <h4>Cursors</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">23</div>
+                <div class="menu-text">
+                    <h4>Sprite</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">24</div>
+                <div class="menu-text">
+                    <h4>Challenge-Layout</h4>
+                </div>
+            </a>
+            </menu>
+            <menu>
+                <h3>Reference 2.2</h3>
+                <a href="../02-html/document.html">
+                <div class="icon-circle">25</div>
+                <div class="menu-text">
+                    <h4>New-Selectors</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">26</div>
+                <div class="menu-text">
+                    <h4>Border-Radius</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">27</div>
+                <div class="menu-text">
+                    <h4>Box-Shadow</h4>
+                </div>
+            </a>
+
+            <a href="../02-html/document.html">
+                <div class="icon-circle">28</div>
+                <div class="menu-text">
+                    <h4>Challenge-Shadow</h4>
+                </div>
+            </a><a href="../02-html/document.html">
+                <div class="icon-circle">29</div>
+                <div class="menu-text">
+                    <h4>New-Backgrounds</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">30</div>
+                <div class="menu-text">
+                    <h4>Text-Shadow</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">31</div>
+                <div class="menu-text">
+                    <h4>Filters</h4>
+                </div>
+            </a>
+
+            <a href="../02-html/document.html">
+                <div class="icon-circle">32</div>
+                <div class="menu-text">
+                    <h4>Clip-Path</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">33</div>
+                <div class="menu-text">
+                    <h4>Web-Fonts</h4>
+                </div>
+            </a>
+
+            <a href="../02-html/document.html">
+                <div class="icon-circle">34</div>
+                <div class="menu-text">
+                    <h4>Variables</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">35</div>
+                <div class="menu-text">
+                    <h4>Transformations</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">36</div>
+                <div class="menu-text">
+                    <h4>Transitions</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">37</div>
+                <div class="menu-text">
+                    <h4>Animations</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">38</div>
+                <div class="menu-text">
+                    <h4>Media-Queries</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">39</div>
+                <div class="menu-text">
+                    <h4>Challenge-Responsive</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">40</div>
+                <div class="menu-text">
+                    <h4>Steps</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">41</div>
+                <div class="menu-text">
+                    <h4>Functions</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">42</div>
+                <div class="menu-text">
+                    <h4>Parallax</h4>
+                </div>
+            </a><a href="../02-html/document.html">
+                <div class="icon-circle">43</div>
+                <div class="menu-text">
+                    <h4>Flexbox</h4>
+                </div>
+            </a>
+
+            <a href="../02-html/document.html">
+                <div class="icon-circle">44</div>
+                <div class="menu-text">
+                    <h4>Grid</h4>
+                </div>
+            </a>
+            <a href="../02-html/document.html">
+                <div class="icon-circle">45</div>
+                <div class="menu-text">
+                    <h4>Challenge-Grid</h4>
+                </div>
+            </a>
+
+            </menu>
+            
+           
+            
+           
+
+    <script>
+        function goToHome() {
+            window.location.href = '../index.html';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Home') {
+                goToHome();
+            }
+        });
+    </script>
+
+    <style>
+        .home-logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+            background: transparent;
+            border: 2px solid #7508e3;
+            border-radius: 50%;
+        }
+
+        .home-logo:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            border-color: #7508e3;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            color: #7508e3;
+            line-height: 1;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .home-logo {
+                top: 10px;
+                left: 10px;
+                width: 35px;
+                height: 35px;
+            }
+            
+            .logo-text {
+                font-size: 24px;
+            }
+        }
+    </style>
+</body>
+</html>

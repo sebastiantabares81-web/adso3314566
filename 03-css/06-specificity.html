@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADSO 3314566 | Dark Mode</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        section button {
+            border-radius: 0.4rem;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            font-size: 1.2rem;
+            display: flex;
+            margin: 4rem auto;
+        }
+        /*Specificity: 0,1,2*/
+        section button.green {
+            background-color:#5fbb5f;
+
+        }
+        /*Specificity: 0,1,1*/
+        section .green {
+            background-color: #e44ea8;
+        }
+    </style>
+</head>
+<body>
+       <a href="../03-css/index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+ <main>
+    <header>
+        <h1>06-Specificity</h1>
+        <h2> Is score/rank that determines which style declaration is ultimately applied to an element.</h2>
+    </header>
+    <section>
+        <button class="green">
+            Press Me
+        </button>
+    </section>
+
+    </main>
+</body>
+</html>

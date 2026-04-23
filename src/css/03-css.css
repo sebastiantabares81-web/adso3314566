@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap');
+
+:root {
+    --p-purple: #9B59B6;
+    --p-purple-vibrant: #BF6EE0;
+    --p-purple-deep: #7B2D8E;
+    --p-purple-dark: #4A1D5E;
+    --p-purple-pale: #D9B4E7;
+    --p-purple-sn: #F3E5F8;
+    --text-light: #F3E5F8;
+    --text-dark: #2D0B3B;
+    --black-soft: #14061C;
+    --black-medium: #210D2B;
+    --black-deep: #0A020F;
+}
+
+/* NUEVO DISEÑO DE FONDO - Estilo "Aurora Nocturna" */
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    background: radial-gradient(ellipse at 20% 30%, 
+        rgba(108, 52, 131, 0.3) 0%, 
+        rgba(13, 4, 18, 0.95) 70%),
+        radial-gradient(ellipse at 80% 70%, 
+        rgba(155, 89, 182, 0.2) 0%, 
+        transparent 60%),
+        radial-gradient(circle at 40% 50%, 
+        rgba(191, 110, 224, 0.15) 0%, 
+        transparent 50%),
+        repeating-linear-gradient(0deg, 
+        transparent, 
+        transparent 2px, 
+        rgba(155, 89, 182, 0.03) 2px, 
+        rgba(155, 89, 182, 0.03) 4px);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 80px 20px 30px 20px;
+    color: var(--text-light);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Efecto de partículas flotantes */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 15% 30%, rgba(191, 110, 224, 0.4) 0%, transparent 100%),
+        radial-gradient(3px 3px at 65% 45%, rgba(155, 89, 182, 0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85% 80%, rgba(217, 180, 231, 0.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 35% 65%, rgba(191, 110, 224, 0.3) 0%, transparent 100%),
+        radial-gradient(4px 4px at 55% 15%, rgba(155, 89, 182, 0.2) 0%, transparent 100%);
+    background-repeat: no-repeat;
+    background-size: 200px 200px, 300px 300px, 150px 150px, 250px 250px, 400px 400px;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatParticles 20s ease-in-out infinite;
+}
+
+@keyframes floatParticles {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Efecto de ondas sutiles */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 50px,
+        rgba(155, 89, 182, 0.05) 50px,
+        rgba(155, 89, 182, 0.05) 100px
+    );
+    pointer-events: none;
+    z-index: 1;
+    animation: waveShift 15s linear infinite;
+}
+
+@keyframes waveShift {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100px);
+    }
+}
+
+.boton-volver {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+    background: rgba(33, 13, 43, 0.7);
+    border-radius: 50%;
+    padding: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(155, 89, 182, 0.4);
+    line-height: 0;
+}
+
+.boton-volver:hover {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 0 20px var(--p-purple));
+    border-color: var(--p-purple-vibrant);
+    background: rgba(155, 89, 182, 0.2);
+}
+
+.boton-volver svg {
+    width: 45px;
+    height: 45px;
+    fill: var(--text-light);
+    transition: fill 0.3s;
+    display: block;
+}
+
+.boton-volver:hover svg {
+    fill: var(--p-purple-vibrant);
+}
+
+/* MAIN - más ancho para el recuadro grande */
+body > main {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+body > main > header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+body > main > header h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 0 0 15px 0;
+    letter-spacing: -2px;
+    background: linear-gradient(135deg, 
+        var(--text-light) 0%, 
+        var(--p-purple-pale) 50%,
+        var(--p-purple-vibrant) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+    animation: gradientShift 3s ease infinite;
+    background-size: 200% auto;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body > main > header h2 {
+    color: var(--p-purple-pale);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 5px;
+    background: rgba(33, 13, 43, 0.6);
+    padding: 10px 25px;
+    border-radius: 50px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    backdrop-filter: blur(10px);
+    display: inline-block;
+}
+
+/* ============================================ */
+/* RECUADRO GRANDE QUE ENGLoba LAS DOS COLUMNAS */
+/* ============================================ */
+body > main > section {
+    background: rgba(33, 13, 43, 0.6);
+    border: 1px solid rgba(155, 89, 182, 0.2);
+    border-radius: 30px;
+    padding: 40px 40px;
+    margin: 30px auto;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(155, 89, 182, 0.1) inset;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: visible;
+}
+
+/* Efecto de borde brillante en el recuadro grande */
+body > main > section::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        transparent 30%, 
+        rgba(155, 89, 182, 0.3),
+        rgba(191, 110, 224, 0.3),
+        transparent 70%);
+    border-radius: 30px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+body > main > section:hover::before {
+    opacity: 1;
+}
+
+body > main > section:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 25px 50px rgba(155, 89, 182, 0.2),
+        0 0 0 1px rgba(155, 89, 182, 0.3) inset;
+    border-color: rgba(155, 89, 182, 0.4);
+}
+
+/* ============================================ */
+/* MENÚ EN DOS COLUMNAS DENTRO DEL RECUADRO */
+/* ============================================ */
+
+.grid-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Cada columna interna - sin recuadro propio, solo el contenido */
+.grid-menu menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+}
+
+/* Títulos de cada columna */
+.grid-menu menu h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(155, 89, 182, 0.4);
+    color: var(--p-purple-vibrant);
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+/* Enlaces - items del menú */
+.grid-menu a {
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 18px 22px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgba(155, 89, 182, 0.1);
+    backdrop-filter: blur(5px);
+    width: auto;
+    min-width: 0;
+}
+
+.grid-menu a:hover {
+    background: rgba(155, 89, 182, 0.15);
+    transform: translateX(8px);
+    border-color: var(--p-purple);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Círculo con número */
+.icon-circle {
+    background: rgba(0, 0, 0, 0.4);
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--p-purple);
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: 0.3s;
+    flex-shrink: 0;
+    border: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.grid-menu a:hover .icon-circle {
+    background: var(--p-purple);
+    color: var(--black-deep);
+    transform: scale(1.05) rotate(5deg);
+    border-color: transparent;
+}
+
+/* Texto del menú */
+.menu-text {
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+}
+
+.grid-menu h4 {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.3;
+}
+
+.grid-menu a:hover h4 {
+    color: var(--p-purple-pale);
+}
+
+.card {
+    background: rgba(33, 13, 43, 0.6);
+    border-radius: 30px;
+    padding: 60px 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(155, 89, 182, 0.1) inset;
+    border: 1px solid rgba(155, 89, 182, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    z-index: 2;
+}
+
+.profile-img {
+    border: 3px solid var(--p-purple);
+    border-radius: 50%;
+    height: 140px;
+    width: 140px;
+    object-fit: cover;
+    background: var(--black-medium);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(155, 89, 182, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    border-color: var(--p-purple-vibrant);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(155, 89, 182, 0.5);
+}
+
+.card h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin: 25px 0 5px 0;
+    letter-spacing: -1.5px;
+    background: linear-gradient(135deg, var(--text-light), var(--p-purple-pale));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.name-title {
+    color: var(--text-light);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: rgba(155, 89, 182, 0.15);
+    padding: 8px 20px;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(155, 89, 182, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* ============================================ */
+/* RESPONSIVE */
+/* ============================================ */
+
+@media (max-width: 900px) {
+    .grid-menu {
+        gap: 20px;
+    }
+    
+    .grid-menu a {
+        padding: 15px 18px;
+        gap: 15px;
+    }
+    
+    .icon-circle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .grid-menu h4 {
+        font-size: 1rem;
+    }
+    
+    body > main > section {
+        padding: 30px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-menu {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    body > main {
+        max-width: 650px;
+    }
+    
+    body > main > section {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 70px 15px 20px 15px;
+    }
+    
+    body > main > header h1 {
+        font-size: 3rem;
+    }
+    
+    body > main > header h2 {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+    
+    .boton-volver {
+        top: 10px;
+        left: 10px;
+    }
+    
+    .boton-volver svg {
+        width: 35px;
+        height: 35px;
+    }
+    
+    body > main > section {
+        padding: 20px 15px;
+    }
+    
+    .grid-menu a {
+        padding: 12px 15px;
+        gap: 12px;
+    }
+    
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .grid-menu h4 {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card { 
+        padding: 45px 25px; 
+        gap: 35px; 
+    }
+    .card h1 { 
+        font-size: 2rem; 
+    }
+    .profile-img { 
+        height: 120px; 
+        width: 120px; 
+    }
+}
+
+/* Tabla para otros usos */
+.table-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.challenge-table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    background-color: rgba(33, 13, 43, 0.4);
+    border: 1px solid var(--p-purple-pale);
+    backdrop-filter: blur(5px);
+}
+
+.challenge-table td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 45px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+.challenge-table td.emoji-cell {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.challenge-table td.emoji-cell:hover {
+    background-color: var(--p-purple-dark);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(155, 89, 182, 0.5);
+}
