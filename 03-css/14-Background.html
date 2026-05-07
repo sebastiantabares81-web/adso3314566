@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 - Background </title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+
+    <style>
+
+        .cuadro{
+            width: 500px;
+            height: 350px;
+            border: 3px solid white;
+            margin: 30px auto;
+        }
+
+        /* Background Color */
+        .color{
+            background-color: skyblue;
+        }
+
+        /* Background Image */
+        .imagen{
+            background-image: url("https://previews.123rf.com/images/fillvector/fillvector2008/fillvector200800919/152606865-blue-line-spider-icon-isolated-seamless-pattern-on-red-background-happy-halloween-party-vector.jpg");
+        }
+
+       /* Background Repeat */
+        .repeat{
+        background-image: url("https://previews.123rf.com/images/fillvector/fillvector2008/fillvector200800919/152606865-blue-line-spider-icon-isolated-seamless-pattern-on-red-background-happy-halloween-party-vector.jpg");
+        background-repeat: repeat-x;
+        background-size: 120px;
+        }
+
+    /* Background Position */
+        .position {
+        background-image: url("https://previews.123rf.com/images/fillvector/fillvector2008/fillvector200800919/152606865-blue-line-spider-icon-isolated-seamless-pattern-on-red-background-happy-halloween-party-vector.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+            background-size: 250px;
+        }
+        /* Background Size */
+        .size{
+            background-image: url("https://previews.123rf.com/images/fillvector/fillvector2008/fillvector200800919/152606865-blue-line-spider-icon-isolated-seamless-pattern-on-red-background-happy-halloween-party-vector.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <main class="document-page"> 
+
+        <a href="../03-css/index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+
+        <header>
+            <h1>14 - Background </h1>
+
+            <h2>
+                <ul>
+                    <li>Background-Color</li>
+                    <li>Background-Image</li>
+                    <li>Background-Repeat</li>
+                    <li>Background-Position</li>
+                    <li>Background-Size</li>
+                </ul>
+            </h2>
+        </header>
+
+        <section>
+
+            <div class="cuadro color">
+                <h3>Background Color</h3>
+            </div>
+
+            <div class="cuadro imagen">
+                <h3>Background Image</h3>
+            </div>
+
+            <div class="cuadro repeat">
+                <h3>Background Repeat</h3>
+            </div>
+
+            <div class="cuadro position">
+                <h3>Background Position</h3>
+            </div>
+
+            <div class="cuadro size">
+                <h3>Background Size</h3>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
