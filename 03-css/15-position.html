@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 - Position</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+
+    <style>
+        .cuadro {
+            width: 500px;
+            height: 350px;
+            border: 3px solid rgb(0, 0, 0);
+            margin: 30px auto;
+            background-color: #3b3f4279;
+            color: rgb(255, 255, 255);
+            position: relative;
+        }
+
+        .caja-ejemplo {
+            width: 150px;
+            height: 80px;
+            background-color: #e74c3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+        }
+
+      
+        .static-demo .caja-ejemplo {
+            position: static;
+        }
+
+    
+        .relative-demo .caja-ejemplo {
+            position: relative;
+            top: 30px;
+            left: 30px;
+        }
+
+        
+        .absolute-demo .caja-ejemplo {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        
+        .fixed-centrado {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            z-index: 1000;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        
+        .sticky-container {
+            background-color: #454b50;
+            height: 250px;
+            overflow-y: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .sticky-elemento {
+            position: sticky;
+            top: 0;
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .contenido-largo {
+            height: 300px;
+            padding: 15px;
+            background-color:#454b50;
+            border-radius: 8px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <main class="document-page"> 
+
+        <a href="../03-css/index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+
+       
+        <div class="fixed-centrado">
+             FIXED CENTRADO 
+        </div>
+
+        <header>
+            <h1>15 - Position</h1>
+
+            <h2>
+                <ul>
+                    <li>Normal / Static</li>
+                    <li>Relative</li>
+                    <li>Absolute</li>
+                    <li>Fixed</li>
+                    <li>Sticky</li>
+                </ul>
+            </h2>
+        </header>
+
+        <section>
+
+        
+            <div class="cuadro static-demo">
+                <h3>  Normal / Static</h3>
+                <div class="caja-ejemplo">
+                    STATIC
+                </div>
+
+            </div>
+
+            
+            <div class="cuadro relative-demo">
+                <h3> Relative</h3>
+                <div class="caja-ejemplo">
+                    RELATIVE<br>
+                    
+                </div>
+               
+            </div>
+
+            
+            <div class="cuadro absolute-demo">
+                <h3> Absolute</h3>
+                <div class="caja-ejemplo">
+                    ABSOLUTE<br>
+                    
+                </div>
+              
+            </div>
+
+            
+            <div class="cuadro">
+                <h3> Fixed</h3>
+               
+            </div>
+
+            
+            <div class="cuadro">
+                <h3>5. Sticky</h3>
+                <div class="sticky-container">
+                    <div class="sticky-elemento">
+                         STICKY 
+                    </div>
+                    <div class="contenido-largo">
+                        <p>"Melo es un elefantito que nació prematuro, y su mamá elefante no lo quiso amamantar.¿Cree usted que Melo mame algún día?Espero que Melo mame pronto, porque si nunca Melo mamara, este moriría.Así que Melo debería mamar todos los días, porque mamando Melo, todos los días muy feliz sería y grande se pondría.Oremos porque Melo mame pronto."</p>
+                        
+                    </div>
+                </div>
+              
+
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16-float</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        .ejemplo {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #E9D5FF;
+            border-radius: 10px;
+        }
+        
+        .titulo {
+            color: #E9D5FF;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .mario-float-left {
+            float: left;
+            margin: 0 15px 10px 0;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+        
+        .mario-float-right {
+            float: right;
+            margin: 0 0 10px 15px;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+        
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .texto-mario {
+            line-height: 1.6;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <a href="../03-css/index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+    <main>
+        <header>
+            <h1>16-Float</h1>
+            <h2>Pushes the element to either the left or right side.</h2>
+        </header>
+        <section>
+            <div class="ejemplo">
+                <div class="titulo">Float Left</div>
+                <img src="../03-css/img/freefire1.jpeg" alt="Juan" class="mario-float-left">
+                <div class="texto-mario">
+                    Todo comenzó como una partida cualquiera en Free Fire. Entré con la intención de jugar solo unos minutos, pero terminé viviendo una de las mejores experiencias dentro del juego. Mi escuadra cayó en Pochinok y, apenas aterrizamos, ya había disparos por todas partes. Perdimos a dos compañeros en los primeros minutos y parecía imposible ganar esa partida. Aun así, decidimos seguir luchando. Fuimos avanzando poco a poco, recogiendo armas, curándonos en silencio y evitando llamar la atención. Cuando quedó el último círculo, solo éramos dos contra un escuadrón completo. Pensamos que todo estaba perdido, pero coordinamos un ataque perfecto y logramos eliminarlos uno por uno. Cuando apareció el Booyah en pantalla, entendí que en este juego no siempre gana el más fuerte, sino el que nunca pierde la fe.
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            
+            <div class="ejemplo">
+                <div class="titulo">Float Right</div>
+                <img src="../03-css/img/freefire2.jpg" alt="MiBulma" class="mario-float-right">
+                <div class="texto-mario">
+                    Recuerdo la primera vez que jugué Free Fire con mis amigos del colegio. Al principio nadie sabía jugar bien, todos corríamos sin estrategia y moríamos rápido, pero aun así nos divertíamos muchísimo. Con el tiempo empezamos a mejorar, aprendimos a usar cada arma, a cubrirnos, a movernos mejor y a confiar más en el equipo. Había noches enteras donde jugábamos hasta tarde intentando conseguir una victoria más. Algunas veces discutíamos por errores en las partidas, pero al final siempre terminábamos riéndonos. Más que un juego, Free Fire se convirtió en un lugar donde compartimos momentos inolvidables, porque detrás de cada Booyah había risas, nervios y recuerdos que todavía seguimos contando hoy.
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            
+            <div class="ejemplo">
+                <div class="titulo">Float con Múltiples Elementos</div>
+                <img src="./img/feefire4.jpg" alt="Tilin" class="mario-float-left">
+                <img src="../03-css/img/feeefirre3.jpeg" alt="PVP" class="mario-float-right">
+                <div class="texto-mario">
+                   Una de las partidas más intensas que viví en Free Fire fue cuando decidí entrar solo en clasificatoria. Todos mis compañeros estaban desconectados y quería demostrarme que podía llegar lejos sin ayuda. La partida comenzó mal: caí en una zona llena de enemigos y apenas encontré una pistola. Tuve que esconderme, moverme con cuidado y sobrevivir usando solo estrategia. Poco a poco fui eliminando jugadores y mejorando mi equipamiento. Cuando quedaban cinco personas, el miedo y la adrenalina eran enormes. Escuchaba disparos cerca y sabía que cualquier error me sacaría de la partida. Al final quedamos uno contra uno. Mi vida estaba baja y casi sin balas, pero decidí atacar primero. Después de unos segundos eternos, apareció el Booyah en la pantalla. Ese día entendí que las mejores victorias son las que consigues cuando todos creen que vas a perder.
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
