@@ -14,18 +14,22 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #17a053;
-        }
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #17a053;
+
+    border: 10px solid white;
+
+    min-height: 100vh;
+
+    padding: 30px;
+}
 
         main {
-            width: 90%;
+            width: 54%;
             margin: 20px auto;
         }
 
-        /* ========================= */
         /* LOGO */
-        /* ========================= */
 
         .logo {
             background: url(../03-css/img/spriteweb.png) no-repeat;
@@ -37,9 +41,7 @@
             margin: 20px auto;
         }
 
-        /* ========================= */
-        /* MENU */
-        /* ========================= */
+        
 
         nav ul {
             display: flex;
@@ -69,14 +71,17 @@
             transition: 0.3s;
         }
 
+      
+
         nav ul li a:hover {
-            background-color: #094d27;
+            background-color: #111;
+            border-bottom: 6px solid #ffd400;
+            color: #ffffff;
+
             transform: scale(1.03);
         }
 
-        /* ========================= */
-        /* CARDS */
-        /* ========================= */
+      
 
         .cards {
             background-color: #0d6a35;
@@ -85,37 +90,89 @@
 
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 40px;
 
             flex-wrap: wrap;
 
             margin-bottom: 40px;
         }
-
         .card {
-            width: 300px;
+            width: 260px;
             height: 200px;
 
-            border: 3px solid #8dd39d;
+            border: 3px solid #ffffff;
 
-            background: url(../03-css/img/spriteweb.png) no-repeat;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            padding-top: 15px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+        
+
+        .card::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 70px;
+
+            background: rgba(255,255,255,0.35);
+
+            z-index: 1;
+
+            transition: 0.3s;
+        }
+
+       
+
+        .card:hover::before {
+            background: rgba(255, 255, 255, 0.801);
+        }
+
+        .card h2 {
+            position: relative;
+            z-index: 2;
+
+            color: #000;
+
+            font-size: 23px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        
+
+        .card:hover h2 {
+            color: #0d6a35;
         }
 
         .card1 {
+            background: url(../03-css/img/spriteweb.png) no-repeat;
             background-position: -500px -10px;
         }
 
         .card2 {
-            background-position:-500px -10px;
-        }
-
-        .card3 {
+            background: url(../03-css/img/spriteweb.png) no-repeat;
             background-position: -500px -10px;
         }
 
-        /* ========================= */
-        /* CONTENT */
-        /* ========================= */
+        .card3 {
+            background: url(../03-css/img/spriteweb.png) no-repeat;
+            background-position: -500px -10px;
+        }
+
 
         .content {
             display: flex;
@@ -124,17 +181,18 @@
 
             background-color: white;
 
-            border: 5px solid #0d6a35;
+            border: 9px solid #0d6a35;
 
             padding: 20px;
-            margin-bottom: 20px;
 
-            gap: 20px;
+            gap: 10px;
+
+            margin-bottom: 0;
         }
 
         .sprite-left {
             background: url(../03-css/img/spriteweb.png) no-repeat;
-            background-position: -30px -300px;
+            background-position: -280px -500px;
 
             width: 120px;
             height: 120px;
@@ -145,13 +203,73 @@
             line-height: 1.8;
             text-align: justify;
         }
+        .text:hover {
+            color:#0d6a35;
+            transition: 0.3s;
+            cursor: pointer;
+        }
 
         .sprite-right {
             background: url(../03-css/img/spriteweb.png) no-repeat;
-            background-position: -300px -260px;
+            background-position: -70px -190px;
 
             width: 140px;
             height: 200px;
+        }
+
+ 
+
+        .footer {
+            background-color: #f1f1f1;
+
+            padding: 30px 20px 10px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            margin-top: 40px;
+
+            box-shadow: inset 0 20px 30px rgb(255, 255, 255);
+        }
+
+        .footer-logo {
+            background: url(../03-css/img/spriteweb.png) no-repeat;
+
+            background-position: -470px -430px;
+
+            width: 320px;
+            height: 180px;
+
+            margin-bottom: 20px;
+        }
+
+        .footer-menu {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+
+            flex-wrap: wrap;
+        }
+
+        .footer-menu a {
+            text-decoration: none;
+            color: #2e2d2d;
+
+            font-size: 22px;
+
+            padding: 10px 5px;
+
+            border-bottom: 6px solid transparent;
+
+            transition: 0.3s;
+        }
+
+   
+
+        .footer-menu a:hover {
+            color: #17a053;
+            border-bottom: 6px solid #17a053;
         }
 
     </style>
@@ -160,11 +278,12 @@
 <body>
 
     <main>
+        
 
-        <!-- LOGO -->
+       
         <div class="logo"></div>
 
-        <!-- MENU -->
+       
         <nav>
             <ul>
                 <li><a href="#">INICIO</a></li>
@@ -175,18 +294,42 @@
             </ul>
         </nav>
 
-        <!-- CARDS -->
+       
         <section class="cards">
 
-            <div class="card card1"></div>
+            <div class="card card1">
+                <h2>Sprite 01</h2>
+            </div>
 
-            <div class="card card2"></div>
+            <div class="card card2">
+                <h2>Sprite 02</h2>
+            </div>
 
-            <div class="card card3"></div>
+            <div class="card card3">
+                <h2>Sprite 03</h2>
+            </div>
 
         </section>
 
-        <!-- CONTENT 1 -->
+       
+        <section class="content">
+
+            <div class="sprite-left"></div>
+
+            <div class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam minima blanditiis porro corporis incidunt dolorum quas,
+                exercitationem quam voluptatibus maxime perspiciatis, hic iure quos
+                cumque necessitatibus sit architecto facere aperiam fugit voluptates.
+                Cumque, delectus error quod facilis odio suscipit culpa quis? Ullam autem 
+                maxime nostrum reprehenderit mollitia.
+            </div>
+
+            <div class="sprite-right"></div>
+
+        </section>
+
+        
         <section class="content">
 
             <div class="sprite-left"></div>
@@ -202,7 +345,7 @@
 
         </section>
 
-        <!-- CONTENT 2 -->
+       
         <section class="content">
 
             <div class="sprite-left"></div>
@@ -218,21 +361,20 @@
 
         </section>
 
-        <!-- CONTENT 3 -->
-        <section class="content">
+        
+        <footer class="footer">
 
-            <div class="sprite-left"></div>
+            <div class="footer-logo"></div>
 
-            <div class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam minima blanditiis porro corporis incidunt dolorum quas,
-                exercitationem quam voluptatibus maxime perspiciatis hic iure quos
-                cumque necessitatibus sit architecto facere aperiam fugit voluptates.
+            <div class="footer-menu">
+                <a href="#">INICIO</a>
+                <a href="#">NOSOTROS</a>
+                <a href="#">PORTAFOLIO</a>
+                <a href="#">SERVICIOS</a>
+                <a href="#">CONTACTO</a>
             </div>
 
-            <div class="sprite-right"></div>
-
-        </section>
+        </footer>
 
     </main>
 
