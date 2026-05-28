@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27 - Box-Shadow</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+</head>
+<style>
+    div.box {
+        background-color: #0006;
+        height: 140px;
+        margin: 2rem auto;
+        width: 200px;
+    }
+        div.box1{
+            box-shadow: 0 0 12px #ffffff;
+        }
+        div.box2{
+            box-shadow: -10px -10px 24px 0 #ffffff;
+        }
+        div.box3{
+            box-shadow: 0 0 20px #ffffff;
+        }
+        div.box4{
+            box-shadow: 4px 4px 0 #cc0,
+                        8px 8px 0 #00c,
+                        12px 12px 0 #c00
+    }
+        div.images img{
+            width: 400px;
+        }
+        div.images{
+            display: flex;
+            justify-content: center;
+            margin-block: 2rem;
+            gap: 1rem;
+        }
+        div.images img:first-child{
+            box-shadow: 0 0 12px #fff;
+        }
+        div.images img:last-child{
+            filter: drop-shadow(0 0 12px #fff);
+        }
+
+</style>
+<body>
+    <main class="document-page"> 
+        <a href="../03-css/index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+        <header>
+            <h1>27 - Box-Shadow</h1>
+            <h2>Property attaches one or more shadows to an element.</h2>
+        </header>
+        <section>
+            <h3>Box-Shadow: 0 0 12px #fff</h3>
+            <div class="box box1"></div>
+            <h3>Box-Shadow: -10px -10px 24px 0 #fff</h3>
+            <div class="box box2"></div>
+            <h3>Box-Shadow: 0 0 20px #fff inset</h3>
+            <div class="box box3"></div>
+            <h3>Box Shadow: multiple</h3>
+            <div class="box box4"></div>
+            <h3>Box-Shadow VS Drop-Shadow()</h3>
+            <div class="images">
+                <img src="./img/spiderman.png" width="200">
+                <img src="./img/spiderman.png" width="200">
+
+            </div>
+           
+            
+        </section>
+    </main>
+</body>
+</html>

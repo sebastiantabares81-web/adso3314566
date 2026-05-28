@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28 - Challenge Shadow</title>
+    <link rel="stylesheet" href="../src/css/03-css.css">
+    <style>
+        figure.frame {
+            background: #fff;
+            height: calc(49*20px);
+            width: calc(49*20px);
+            margin: 2rem auto;
+            zoom: 0.60;
+            position: relative;
+        }
+        div.squares {
+            background: url(./img/square.png);
+            opacity: 0.3;
+            z-index: 2;
+            margin-top: -20px;
+            height: calc(49*20px);
+        }
+        div.gengar{
+            background-color: #ffffff;
+            height: 20px;
+            width: 20px;
+            box-shadow: 20px 0 0 0 #ffffff,
+                        40px 0 0 0 #ffffff,
+                        60px 0 0 0 #ffffff,
+                        80px 0 0 0 #ffffff,
+                        
+                        /*fila 2*/
+                        0px 20px 0 0 #ffffff,
+                        400px 20px 0 0 #614379,
+                        800px 20px 0 0 #614379,
+                        820px 20px 0 0 #000000,
+                        840px 20px 0 0 #000000,
+
+                        /*fila 3*/
+                        400px 40px 0 0 #000000,
+                        540px 40px 0 0 #000000
+
+
+        }
+    </style>
+</head>
+<body>
+    <main class="document-page"> 
+        <a href="../03-css/index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+        <header>
+            <h1>28 - Challenge Shadow</h1>
+            <h2>Pixel Art (Gengar).</h2>
+        </header>
+        <section>
+            <figure class="frame">
+                <div class="gengar"></div>
+                <div class="squares"></div>
+            </figure>
+            
+            
+        </section>
+    </main>
+</body>
+</html>
