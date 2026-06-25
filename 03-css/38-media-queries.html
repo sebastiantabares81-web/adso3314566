@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>38 - Media Queries</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap');
+
+        *{
+            transition: all 0.5s ease-in;
+        }
+
+        body {
+            font-family: sans-serif;
+            background-color: #003675;
+            color: #fff;
+
+            main {
+                padding: 4rem;
+
+                header {
+                    figure.logo {
+                        background: url(../03-css/img/pepsi01.png) no-repeat center;
+                        height: 354px;
+                        margin: 0 auto;
+                        width: 919px;
+                        
+                    }
+                }
+
+                section {
+                    h1 {
+                        text-align: center;
+                        span.md, span.sm {
+                            display: none;
+                        }
+                    }
+
+                    p {
+                        margin-block: 4rem;
+                        text-align: justify;
+                        line-height: 2rem;
+                    }
+                }
+
+
+            }
+        }
+        @media (max-width:1024px) {
+            body main {
+                header {
+                    figure.logo {
+                        background: url(../03-css/img/pepsi02.png) no-repeat center;
+                        height: 370px;
+                        width: 348px;
+                    }
+                }
+                section {
+                    h1 {
+                        font-size: 2rem;
+                        span.lg, span.sm {
+                            display: none;
+
+                        }
+                        span.md {
+                            display: inline;
+                        }
+                        
+
+                        
+                    }
+                }
+            }
+        
+        @media (max-width: 780px) {
+            body main {
+                header {
+                    figure.logo {
+                        background: url(../03-css/img/pepsi03.png) no-repeat center;
+                        height: 156px;
+                        width: 162px;
+                    }
+                }
+                section {
+                    h1 {
+                        font-size: 1.2rem;
+                        span.lg, span.md {
+                            display: none;
+
+                        }
+                        span.sm {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }    
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <figure class="logo"></figure>
+        </header>
+        <section>
+            <h1>Media Queries
+                <span class="lg">(> 1024px) 💻 Desktop</span>
+                <span class="md">(> 1024px) 🔳 Tablet</span>
+                <span class="sm">(> 780px) 📱 Mobile</span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea dolore nihil exercitationem iure sed
+                blanditiis consectetur ad sint culpa, eius tempore accusantium deleniti veritatis ipsam sapiente earum,
+                sequi delectus animi quas voluptatibus tempora sit doloribus? Numquam, odit? Neque, non magnam aut
+                itaque tempora ea laborum modi, ad sint placeat libero sunt dolores, earum voluptates. Perferendis nam
+                voluptatem magni perspiciatis, dolorum fuga, eius similique corrupti dolorem beatae rem explicabo!
+                Sapiente distinctio dolor minima eveniet minus! Voluptate tempora sunt eos laboriosam. Quis nostrum
+                laborum optio aperiam distinctio, voluptates numquam obcaecati necessitatibus cupiditate praesentium
+                facere ipsam vitae enim placeat! Quas assumenda temporibus eum dolores accusamus expedita. Earum, sequi
+                mollitia labore aspernatur, voluptatem ex placeat magni repellendus qui assumenda totam illum maiores
+                omnis dolorum!
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>
