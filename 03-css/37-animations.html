@@ -3,70 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>37 - Animations</title>
+    <title>37-animations</title>
     <link rel="stylesheet" href="../src/css/03-css.css">
-</head>
-<style>
-    main section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    <style>
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        main section {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
 
-        div.jungle {
-            background: url(../03-css/img/jungle.png) no-repeat center;
+        main section div.jungle {
+            background: url(./img/jungle.png) no-repeat center;
             border-radius: 4px;
             margin-block: 2rem;
             position: relative;
             height: 471px;
             width: 380px;
-            img {
-                border-radius: 0;
-                border: none;
-                position: absolute;
+        }
+
+        main section div.jungle img {
+            border-radius: 0%;
+            border: none;
+            position: absolute;
+        }
+
+        main section div.jungle img.logo {
+            top: 35px;
+            left: 30px;
+            height: 70px;
+            object-fit: contain;
+            z-index: 9;
+            width: 317px;
+            animation: 1s animLogo ease-in infinite;
+        }
+
+        main section div.jungle img.dk {
+            top: 120px;
+            left: 120px;
+            width: 140px;
+            object-fit: contain;
+            z-index: 8;
+            animation: 2s animDK ease-out infinite;
+        }
+
+        main section div.jungle div.move {
+            position: absolute;
+            top: 240px;
+            left: 0;
+        }
+
+        main section div.jungle div.move img.ryno {
+            width: 140px;
+            object-fit: contain;
+            top: 0;
+            animation: 3s animRyno linear infinite;
+        }
+
+        @keyframes animLogo {
+            0%, 10% {
+                transform: scale(1);
             }
-            img.logo {
-                top: 35px;
-                left: 30px;
-                height: 72px;
-                objec-fit: contain;
-                z-index: 9;
-                width: 317px;
-                animation: 2s animLogo ease-in infinite;
+            50% {
+                transform: scale(1.2);
             }
         }
-    }
-    @keyframes animLogo {
-        0%, 100% {
-            transform: scale(1)
+
+        @keyframes animDK {
+            0% {
+            top: 170px;
+            transform: rotateX(0deg);
+            }
+            40% {
+            top: 120px; 
+            transform: rotateX(0deg);
+            }
+            50% {
+                top: 120px;  
+                transform: rotateX(360deg);
+                }
+                60% {
+
+                    top: 120px;
+                    transform: rotateX(360deg);
+                    }   
+                    100% {
+                        top: 170px;  
+                        transform: rotateX(360deg);
+            }
         }
-        50% {
-            transform: scale(1.2)
+
+        @keyframes animRyno {
+            0% {
+                left: 0;
+                top: 0;
+                transform: scaleX(1) translateY(0);
+            }
+            10% {
+                top: -6px;
+                transform: scaleX(1) translateY(0);
+            }
+            20% {
+                top: 0;
+                transform: scaleX(1) translateY(0);
+            }
+            22% {
+                left: 100px;
+                top: 0;
+                transform: scaleX(1) translateY(0);
+            }
+            25% {
+                left: 120px;
+                top: -110px;
+                transform: scaleX(1) translateY(0);
+            }
+            28% {
+                left: 140px;
+                top: 0;
+                transform: scaleX(1) translateY(0);
+            }
+            40% {
+                left: 200px;
+                top: -6px;
+                transform: scaleX(1) translateY(0);
+            }
+            50% {
+                left: 240px;
+                top: 0;
+                transform: scaleX(1) translateY(0);
+            }
+            55% {
+                left: 235px;
+                top: -6px;
+                transform: scaleX(-1) translateY(0);
+            }
+            60% {
+                left: 220px;
+                top: 0;
+                transform: scaleX(-1) translateY(0);
+            }
+            72% {
+                left: 140px;
+                top: 0;
+                transform: scaleX(-1) translateY(0);
+            }
+            75% {
+                left: 120px;
+                top: -110px;
+                transform: scaleX(-1) translateY(0);
+            }
+            78% {
+                left: 100px;
+                top: 0;
+                transform: scaleX(-1) translateY(0);
+            }
+            85% {
+                left: 50px;
+                top: -6px;
+                transform: scaleX(-1) translateY(0);
+            }
+            100% {
+                left: 0;
+                top: 0;
+                transform: scaleX(-1) translateY(0);
+            }
         }
-    }
-</style>
+    </style>
+</head>
 <body>
-    <main class="document-page"> 
-        <a href="../03-css/index.html" class="boton-volver">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
-                <path
-                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
-                </path>
-            </svg>
-        </a>
+    <a href="../03-css/index.html" class="boton-volver">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256">
+            <path d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z"></path>
+        </svg>
+    </a>
+    <main>
         <header>
-            <h1>37 - Animations</h1>
-            <h2>Lets an element gradually change from one style to another.</h2>
+            <h1>37-Animations</h1>
+            <h2>Description</h2>
         </header>
         <section>
             <div class="jungle">
-                <img src="../03-css/img/logo-dk.png" alt="" class="logo">
-                <img src="../03-css/img/dk.png" alt="" class="dk">
+                <img src="./img/logo-dk.png" class="logo">
+                <img src="./img/dk.png" class="dk">
                 <div class="move">
-                    <img src="../03-css/img/ryno.png" alt="" class="ryno">
+                    <img src="./img/ryno.png" class="ryno">
                 </div>
             </div>
-            
         </section>
     </main>
 </body>

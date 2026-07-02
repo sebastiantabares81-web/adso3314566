@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Evil</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all .4s ease;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: url(./img/raccon.jpg) no-repeat center;
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header figure.titulo {
+            background: url(./img/titulo.png) no-repeat center;
+            background-size: contain;
+            width: 500px;
+            height: 180px;
+            margin: 0 auto 50px;
+        }
+
+        section.personajes {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        article.card {
+            width: 250px;
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: #111;
+        }
+
+        article.card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        article.card h3 {
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, .85);
+            color: #bf1818;
+            text-align: center;
+            font-size: 18px;
+            border-top: 2px solid #fff;
+        }
+
+        article.card:hover img {
+            transform: scale(1.12) translateY(-10px);
+        }
+
+        article.card:hover h3 {
+            bottom: 0;
+        }
+
+        section.detalle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin: 20px auto 0;
+            max-width: 1100px;
+            padding: 0 20px;
+        }
+
+        article.card-horizontal {
+            display: flex;
+            background: rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            height: 220px;
+            width: 102%;
+            backdrop-filter: blur(4px);
+        }
+
+        article.card-horizontal .img-wrap {
+            width: 180px;
+            height: 220px;
+            flex-shrink: 0;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        article.card-horizontal .img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+        }
+
+        article.card-horizontal .info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 18px 30px 15px 25px;
+            justify-content: flex-start;
+        }
+
+        article.card-horizontal .info h3 {
+            color: #bf1818;
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        article.card-horizontal .info .desc-wrapper {
+            max-width: 80%;
+        }
+
+        article.card-horizontal .info .desc-wrapper .line {
+            border-bottom: 2px solid #bf1818;
+            padding-bottom: 4px;
+            margin-bottom: 6px;
+        }
+
+        article.card-horizontal .info .desc-wrapper p {
+            color: #e0d6c0;
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+            font-weight: 400;
+        }
+
+       
+        @media (max-width: 1024px) {
+            main {
+                padding: 20px;
+            }
+
+            header figure.titulo {
+                width: 350px;
+                height: 130px;
+                margin-bottom: 30px;
+            }
+
+            section.personajes {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-items: center;
+                gap: 20px;
+                max-width: 550px;
+                margin: 0 auto 40px;
+            }
+
+            article.card {
+                width: 100%;
+                max-width: 250px;
+                height: 250px;
+            }
+
+            article.card h3 {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            section.detalle {
+                padding: 0 15px;
+                gap: 20px;
+            }
+
+            article.card-horizontal {
+                height: 190px;
+                max-width: 700px;
+            }
+
+            article.card-horizontal .img-wrap {
+                width: 150px;
+                height: 190px;
+            }
+
+            article.card-horizontal .info {
+                padding: 15px 20px 12px 18px;
+            }
+
+            article.card-horizontal .info h3 {
+                font-size: 19px;
+            }
+
+            article.card-horizontal .info .desc-wrapper {
+                max-width: 85%;
+            }
+
+            article.card-horizontal .info .desc-wrapper p {
+                font-size: 13px;
+            }
+        }
+
+       
+        @media (max-width: 780px) {
+            main {
+                padding: 15px;
+            }
+
+            header figure.titulo {
+                width: 200px;
+                height: 80px;
+                margin-bottom: 25px;
+            }
+
+            section.personajes {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 40px;
+                max-width: 100%;
+            }
+
+            article.card {
+                width: 90%;
+                max-width: 280px;
+                height: 280px;
+            }
+
+            article.card h3 {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            section.detalle {
+                padding: 0 10px;
+                gap: 15px;
+            }
+
+            article.card-horizontal {
+                flex-direction: column;
+                height: auto;
+                max-width: 100%;
+            }
+
+            article.card-horizontal .img-wrap {
+                width: 100%;
+                height: 200px;
+            }
+
+            article.card-horizontal .info {
+                padding: 15px 18px 18px;
+            }
+
+            article.card-horizontal .info h3 {
+                font-size: 18px;
+                margin-bottom: 2px;
+            }
+
+            article.card-horizontal .info .desc-wrapper {
+                max-width: 100%;
+            }
+
+            article.card-horizontal .info .desc-wrapper p {
+                font-size: 13px;
+                line-height: 1.4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <figure class="titulo"></figure>
+        </header>
+
+        <section class="personajes">
+            <article class="card">
+                <img src="./img/leon.webp" alt="Leon Kennedy">
+                <h3>Leon</h3>
+            </article>
+            <article class="card">
+                <img src="./img/chris.jpg" alt="Chris Redfield">
+                <h3>Chris</h3>
+            </article>
+            <article class="card">
+                <img src="./img/jill.jpg" alt="Jill Valentine">
+                <h3>Jill</h3>
+            </article>
+            <article class="card">
+                <img src="./img/claire.jpg" alt="Claire Redfield">
+                <h3>Claire</h3>
+            </article>
+        </section>
+
+        <section class="detalle">
+            <article class="card-horizontal">
+                <div class="img-wrap">
+                    <img src="./img/leoncompleto.webp" alt="Leon S. Kennedy">
+                </div>
+                <div class="info">
+                    <h3>Leon</h3>
+                    <div class="desc-wrapper">
+                        <div class="line"></div>
+                        <p>Leon S. Kennedy es un oficial de policía novato que sobrevive al brote en Raccoon City. Su valentía y habilidades lo convierten en un agente especial del gobierno.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card-horizontal">
+                <div class="img-wrap">
+                    <img src="./img/chriscompleto.png" alt="Chris Redfield">
+                </div>
+                <div class="info">
+                    <h3>Chris</h3>
+                    <div class="desc-wrapper">
+                        <div class="line"></div>
+                        <p>Chris Redfield es un miembro fundador de S.T.A.R.S. y uno de los mejores agentes antiterroristas. Lucha contra Umbrella y las amenazas biológicas.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card-horizontal">
+                <div class="img-wrap">
+                    <img src="./img/jillcompleto.webp" alt="Jill Valentine">
+                </div>
+                <div class="info">
+                    <h3>Jill</h3>
+                    <div class="desc-wrapper">
+                        <div class="line"></div>
+                        <p>Jill Valentine es una experta en cerraduras y miembro de S.T.A.R.S. Sobrevive al incidente de la mansión y al caos de Raccoon City con gran inteligencia.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card-horizontal">
+                <div class="img-wrap">
+                    <img src="./img/clairecompleto.webp" alt="Claire Redfield">
+                </div>
+                <div class="info">
+                    <h3>Claire</h3>
+                    <div class="desc-wrapper">
+                        <div class="line"></div>
+                        <p>Claire Redfield busca a su hermano Chris durante el brote. Es intrépida, empática y una luchadora nata que protege a los inocentes.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
