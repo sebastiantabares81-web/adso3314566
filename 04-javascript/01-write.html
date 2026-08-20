@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Write</title>
+    <link rel="stylesheet" href="../src/css/04-js.css">
+    
+</head>
+<body>
+    <main class="document-page"> 
+        <a href="./index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+        <header>
+            <h1>01 - Write</h1>
+            <h2>Aprende a escribir y ejecutar código básico de JavaScript.</h2>
+        </header>
+        <section>
+
+            <script>
+            document.write('<h3>Welcome to JS</h3>');
+            </script>
+            <p id="message"></p>
+        </section>
+    </main>
+                <script>
+
+                    const message = document.getElementById('message');
+                    const string = 'Amazing';
+                    message.innerHTML = "<strong> We love </strong>"
+                    message.innerText += ' Javascript'
+                    message.textContent +=` is ${string}♥️`;
+
+                    //Write in Console
+                    const pokemons = [
+                        ['Pikachu', 'Electric'],
+                        ['Bulbasaur', 'Grass'],
+                        ['Charmander', 'Fire'],
+                        ['Squirtle', 'Water']
+                    ];
+                    console.clear();
+                    console.log('This is a console message!');
+                    console.log('2**4='+2**4);
+                    console.table(pokemons);
+                </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Comments</title>
+    <link rel="stylesheet" href="../src/css/04-js.css">
+    
+</head>
+<body>
+    <main class="document-page"> 
+        <a href="./index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+        <header>
+            <h1>02 - Comments</h1>
+            <h2>Añade comentarios para explicar o anotar tu código.</h2>
+        </header>
+        <section>
+            <h3>Digital Time:</h3>
+            <h2 id="time">00:00:00</h2>
+
+           
+        </section>
+    </main>
+    <script>
+        //this is a line comment
+        const time = document.getElementById('time')
+        //Add some styles
+        time.style.textAlign = 'center';
+        time.style.zoom      = '3.4';
+        /*
+        this is a block comment
+        its used to multiple lines of code
+        or inactive large partions of code
+        */
+
+        // this is a interval time
+        setInterval(function() {
+            let today   = new Date; // New Date
+            let hours   = today.getHours(); // Get Hours
+            let minutes = today.getMinutes(); //Get minutes
+            let seconds = today.getSeconds(); //Get Seconds
+            //Show time
+            time.textContent = `${hours}:${minutes}:${seconds}`
+        }, 1000)
+    </script>
+            
+</body>
+</html>

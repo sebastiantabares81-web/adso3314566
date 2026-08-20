@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - methods - objects</title>
+    <link rel="stylesheet" href="../src/css/04-js.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <style>
+        main section h3.pk-name {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        main section h4 {
+            background-color: #fff9;
+            color: #0009;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1.6rem;
+            margin: 0 auto;
+            padding: 0.4rem 1rem;
+            width: fit-content;
+        }
+
+        main section figure {
+            background-repeat: no-repeat;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            height: 192px;
+            width: 202px;
+        }
+        main section figure.alive {
+            background-position-x: 0px;
+        }
+        main section figure.attack {
+            background-position-x: -202px;
+        }
+        main section figure.feed {
+            background-position-x: -404px;
+        }
+        main section figure.dead {
+            background-position-x: -608px;
+        }
+        main section div.actions {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 150px;
+            button {
+                background: #fff9;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                padding: 0.4rem 1rem;
+                transition: transform 0.2s ease-in;
+                &:hover {
+                    transform: scale(1.2);
+                }
+                /* Estilo para botones deshabilitados */
+                &:disabled {
+                    background: #555;
+                    color: #999;
+                    cursor: not-allowed;
+                    transform: none !important;
+                    opacity: 0.6;
+                }
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <main class="document-page"> 
+        <a href="./index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+        <header>
+            <h1>05 - Methods - Objects</h1>
+            <h2>Usa métodos para interactuar con objetos.</h2>
+        </header>
+        
+       <section>
+            <h3 class="pk-name"></h3>
+            <h4 class="pk-hp"></h4>
+            <figure class="pk-image animate__animated"></figure>
+            <div class="actions">
+                <button class="btn-attack">Attack 👊</button>
+                <button class="btn-feed">Feed 🍽️</button>
+            </div>
+            </div>
+        </section>
+        </main>
+        <script>
+
+        // Elements
+        const pkName = document.querySelector('.pk-name');
+        const pkHp = document.querySelector('.pk-hp');
+        const pkImage = document.querySelector('.pk-image');
+
+        // Buttons
+        const btnAttack = document.querySelector('.btn-attack');
+        const btnFeed = document.querySelector('.btn-feed');
+
+        // Object
+        const pokemon = {
+
+            // Attributes
+            name: 'Marrano',
+            type: 'Normal',
+            hp: 100,
+            image: 'imgs/snorlax-sprite.png',
+            status: 'alive',
+
+            // Render
+            render: function () {
+                pkName.innerHTML = `${this.name} <small>(${this.type})</small>`;
+                pkImage.style.backgroundImage = `url(${this.image})`;
+                this.updateHp('animate__rubberBand');
+                this.checkButtons(); // Verificar estado inicial de los botones
+            },
+
+            // Update HP and classes
+            updateHp: function (fx) {
+
+                pkHp.innerHTML = `HP: ${this.hp}`;
+
+                pkImage.classList.remove(
+                    'alive',
+                    'attack',
+                    'feed',
+                    'dead',
+                    'animate__rubberBand'
+                );
+
+                pkImage.classList.add(this.status, fx);
+                
+                // Verificar el estado de los botones después de actualizar HP
+                this.checkButtons();
+            },
+
+            // Función para verificar y actualizar el estado de los botones
+            checkButtons: function () {
+                // Deshabilitar botón de Feed si HP es 200 o más
+                if (this.hp >= 200) {
+                    btnFeed.disabled = true;
+                } else {
+                    btnFeed.disabled = false;
+                }
+
+                // Deshabilitar botón de Attack si HP es 0 o menos
+                if (this.hp <= 0) {
+                    btnAttack.disabled = true;
+                } else {
+                    btnAttack.disabled = false;
+                }
+            },
+
+            // Feed
+            feed: function () {
+
+                if (this.hp < 200) {
+
+                    this.hp += 25;
+                    this.status = 'feed';
+
+                    this.updateHp('animate__rubberBand');
+                    this.updateStatus();
+                }
+            },
+
+            // Attack
+            attack: function () {
+
+                if (this.hp > 0) {
+
+                    this.hp -= 25;
+
+                    if (this.hp <= 0) {
+                        this.hp = 0;
+                        this.status = 'dead';
+                    } else {
+                        this.status = 'attack';
+                    }
+
+                    this.updateHp('animate__rubberBand');
+
+                    if (this.hp > 0) {
+                        this.updateStatus();
+                    }
+                }
+            },
+
+            // Return to alive after animation
+            updateStatus: function () {
+
+                setTimeout(() => {
+
+                    this.status = 'alive';
+
+                    pkImage.classList.remove(
+                        'attack',
+                        'feed',
+                        'animate__rubberBand'
+                    );
+
+                    pkImage.classList.add('alive');
+                    
+                    // Verificar nuevamente después de la animación
+                    this.checkButtons();
+
+                }, 1200);
+            }
+
+        };
+
+        // Initial render
+        pokemon.render();
+
+        // Events
+        btnFeed.addEventListener('click', function () {
+            pokemon.feed();
+        });
+
+        btnAttack.addEventListener('click', function () {
+            pokemon.attack();
+        });
+
+    </script>
+</body>
+</html>

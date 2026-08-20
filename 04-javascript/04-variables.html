@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - Variables</title>
+    <link rel="stylesheet" href="../src/css/04-js.css">
+    
+</head>
+<body>
+    <main class="document-page"> 
+        <a href="./index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+        <header>
+            <h1>04 - Variables</h1>
+            <h2>Almacena y gestiona datos usando variables.</h2>
+        </header>
+       <section>
+            <h3>Type String:    <small class="type-string"></small></h3>
+            <h3>Type Number:    <small class="type-number"></small></h3>
+            <h3>Type Boolean:   <small class="type-boolean"></small></h3>
+            <h3>Type Null:      <small class="type-null"></small></h3>
+            <h3>Type Undefined: <small class="type-undefined"></small></h3>
+            <h3>Type Array:     <small class="type-array"></small></h3>
+            <h3>Type Object:    <small class="type-object"></small></h3>
+        </section>
+    </main>
+   <script>
+        // Type String
+        const tstring = document.querySelector('.type-string');
+        const message = 'Hello JS';
+        tstring.textContent = `${message} -> Length:
+                                ${message.length} characters`;
+
+        // Type Number
+        const tnumber = document.querySelector('.type-number');
+        const num1 = '45';
+        const num2 = 12.4;
+        tnumber.textContent = `(45+12.4) -> ${parseInt(num1)+num2}`;
+
+        // Type Boolean
+        const tboolean = document.querySelector('.type-boolean')
+        const isTrue = (4>8);
+        tboolean.textContent = `(4>8) -> ${isTrue}`
+
+        // Type Null
+        const tnull = document.querySelector('.type-null');
+        const isCreated = null;
+        tnull.textContent = `isCreated -> ${isCreated}`
+
+        //Type Undefined
+        const tundefined = document.querySelector('.type-undefined');
+        const isBinary = undefined;
+        tundefined.textContent = `isBinary -> ${isBinary}`;
+
+        //Type Array
+        const tarray = document.querySelector('.type-array');
+        const landscapes = ['🌆','🌋','🏙️','⛰️','🌅'];
+        tarray.textContent = `Landscapes -> ${landscapes}`
+
+        //type Object
+        const tobject = document.querySelector('.type-object');
+        const hashira = {
+            name: 'Kyojuro Rengoku',
+            type: '🔥',
+            age: 20
+        }
+        tobject.textContent = `${hashira.name} -> ${hashira.type}`
+
+    </script>
+
+
+               
+    
+</body>
+</html>
