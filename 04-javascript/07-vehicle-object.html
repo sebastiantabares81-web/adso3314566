@@ -8,27 +8,121 @@
     <style>
         div.vehicle {
             &.dark {
-                background-color: black;
-
+                background-color: #13171a;
                 header {
                     button.mode {
-                        background: url(imgs/vehicle/mode-dark.png) no-repeat center /contain;
-                        border: none;
-                        height: 60px;
-                        width: 100px;
+                        background: url(imgs/vehicle/mode-light.svg) no-repeat center /cover;
                     }
                 }
                 nav {
+                    figure.brand {
+                        background: url(imgs/vehicle/brand-dark.svg) no-repeat center /contain;
+                        color: #fff;
+                    }
+                    button {
+                        &.prev {
+                            background: url(imgs/vehicle/Prev.png) no-repeat center /contain;
+                        }
+                        &.next {
+                            background: url(imgs/vehicle/Next.png) no-repeat center /contain;
+                        }
+                    }
+                }
+                div {
+                    figure {
+                        color: #fff;
+                        &.model {
+                            background: url(imgs/vehicle/model-dark.svg) no-repeat center;
+                        }
+                        &.reference {
+                            background: url(imgs/vehicle/refel-dark.svg) no-repeat center;
+                        }
+                        &.color {
+                            background: url(imgs/vehicle/color-dark.svg) no-repeat center;
+                        }
+                    }
+                }
+                figure.landscape {
+                    background: url(imgs/vehicle/landscape-dark.svg) no-repeat center /contain;
+                    div.frame {
+                        div.sky {
+                            background: url(imgs/vehicle/sky-night.svg) repeat-x 0 bottom /contain;
+                        }
+                        div.mountains {
+                            background: url(imgs/vehicle/mountanis-night.png) repeat-x 0 bottom /contain;
+                        }
+                        div.route {
+                            background: url(imgs/vehicle/route-night.png) repeat-x 0 bottom /contain;
+                        }
+                    }
+                }
+                menu {
+                    button {
+                        &.btn-on {
+                            background: url(imgs/vehicle/on.svg) 
+                                        no-repeat center /contain;
+                        }
+                        &.btn-forward {
+                            background: url(imgs/vehicle/forward\ \(1\).svg) 
+                                        no-repeat center /contain;
+                        }
+                        &.btn-stop {
+                            background: url(imgs/vehicle/stopdark.svg) 
+                                        no-repeat center /contain;
+                        }
+                        &.btn-backward {
+                            background: url(imgs/vehicle/back-dark.svg) 
+                                        no-repeat center /contain;
+                        }
+                        &.btn-off {
+                            background: url(imgs/vehicle/off-dark.svg) 
+                                        no-repeat center /contain;
+                        }
+                    }
+                }
+            }
+            background-color: #fbfcfc;
+            border-radius: 8px;
+            margin: 0 auto;
+            height: 576px; /* 576+24=600 */
+            padding: 12px;
+            width: 356px; /* 356+24=380 */
+            header {
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+                figure {
+                    background: url(imgs/vehicle/brand.svg) no-repeat center /cover;
+                    height: 49px;
+                    margin: 0;
+                    width: 220px;
+                }
+                button.mode {
+                    background: url(imgs/vehicle/mode-dark.svg) no-repeat center /cover;
+                    border: none;
+                    cursor: pointer;
+                    height: 60px;
+                    transition: transform 0.4s ease-in;
+                    width: 100px;
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            nav {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    margin-top: 20px;
 
                     figure.brand {
-                        background: url(imgs/vehicle/brand.png) no-repeat center /contain;
+                        background: url(imgs/vehicle/brand-light.svg) no-repeat center /contain;
+                        color: #141516;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         height: 60px;
+                        margin: 0;
                         width: 200px;
                     }
 
@@ -39,107 +133,374 @@
                         transition: transform 0.4s ease-in;
                         width: 60px;
                         &.prev {
-                            background: url(imgs/vehicle/Prev.png) no-repeat center /contain;
+                            background: url(imgs/vehicle/prev-light.svg) no-repeat center /contain;
                             &:hover {
                                 transform: translateX(-8px);
                             }
                         }
                         &.next {
-                            background: url(imgs/vehicle/Next.png) no-repeat center /contain;
+                            background: url(imgs/vehicle/next-light.svg) no-repeat center /contain;
                             &:hover {
                                 transform: translateX(8px);
                             }
                         }
                     }
                 }
-            }
-
-
-
-
-
-            width: 356px;
-            height: 576px;
-            background-color: rgb(253, 253, 253);
-            padding: 12px;
-            
-            margin: 0 auto;
-            border-radius: 8px;
-            header {
-
-                align-items: center;
-                display: flex;
-                justify-content: space-between;
-            figure {
-                background: url(imgs/vehicle/logo.png) no-repeat center /contain; /* Cambiado a contain */
-                height: 60px;
-                margin: 0;
-                width: 100px;
-            }
-            button.mode {
-                background: url(imgs/vehicle/mode-light.png) no-repeat center /contain; /* Cambiado a contain */
-                border: none;
-                height: 60px;
-                width: 100px;
-                transition: transform 0.4s ease-in;
-                cursor: pointer;
-                &:hover {
-                    transform: scale(1.1);
+                div {
+                    align-items: center;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 12px;
+                    figure {
+                        color: #141516;
+                        margin: 0;
+                        padding: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: end;
+                        padding-bottom: 10px;
+                        height: 80px; /*80px+10px=90px*/
+                        width: 110px;
+                        &.model {
+                            background: url(imgs/vehicle/model-light.svg) no-repeat center;
+                        }
+                        &.reference {
+                            background: url(imgs/vehicle/refel-light.svg) no-repeat center;
+                        }
+                        &.color {
+                            background: url(imgs/vehicle/color-light.svg) no-repeat center;
+                        }
+                    }
                 }
-    }
-}
-            
+                figure.landscape {
+                    background: url(imgs/vehicle/landscape-light.svg) no-repeat center /contain;
+                    margin: 0;
+                    margin-top: 12px;
+                    position: relative;
+                    height: 238px;
+                    width: 348px;
+                    div.frame {
+                        border-radius: 0.4rem;
+                        overflow: hidden;
+                        position: absolute;
+                        left: 4px;
+                        top: -8px;
+                        width: 340px;
+                        height: 228px;
+                        div {
+                            position: absolute;
+                            height: 238px;
+                            width: 695px;
+                        }
+                        div.sky {
+                            background: url(imgs/vehicle/sky-light.png) repeat-x 0 bottom /contain;
+                            z-index: 1;
+                        }
+                        div.mountains {
+                            background: url(imgs/vehicle/mountains-light.png) repeat-x 0 bottom /contain;
+                            z-index: 2;
+                        }
+                        div.route {
+                            background: url(imgs/vehicle/route-light.png) repeat-x 0 bottom /contain;
+                            z-index: 7;
+                        }
+                        img.image {
+                            position: absolute;
+                            border: none;
+                            border-radius: 0;
+                            object-fit: cover;
+                            height: 60px;
+                            width: 190px;
+                            left: 80px;
+                            bottom: -10px;
+                            z-index: 9;
+                        }
+
+                    }
+                }
+                menu {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: row;
+                    margin: 0;
+                    margin-top: 12px;
+                    padding: 0;
+                    justify-content: space-between;
+                    width: 356px;
+                    button {
+                        border: none;
+                        height: 68px;
+                        width: 68px;
+                        transition: transform 0.4s ease-in;
+                        &.btn-on {
+                            background: url(imgs/vehicle/on.light.svg) 
+                                        no-repeat center /contain;
+                        }
+                        &.btn-forward {
+                            background: url(imgs/vehicle/forward-light.svg) 
+                                        no-repeat center /contain;
+                        }
+                        &.btn-stop {
+                            background: url(imgs/vehicle/stop-light.svg) 
+                                        no-repeat center /contain;
+                        }
+                        &.btn-backward {
+                            background: url(imgs/vehicle/back-light.svg) 
+                                        no-repeat center /contain;
+                        }
+                        &.btn-off {
+                            background: url(imgs/vehicle/off-light.svg) 
+                                        no-repeat center /contain;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            transform: scale(1.1);
+                        }
+                    }
+                }
         }
     </style>
-    
 </head>
 <body>
-    <main class="document-page"> 
-        <a href="./index.html" class="boton-volver">
+     <a href="./index.html" class="boton-volver">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
                 <path
                     d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
                 </path>
             </svg>
         </a>
+    <main>
         <header>
-            <h1>07 - Vehicle - Object</h1>
-            <h2>Crea y manipula un objeto vehículo con propiedades.</h2>
+            <h1>07-Class Vehicle</h1>
+            <h2>Create and manipulate a vehicle object with properties.</h2>
         </header>
         <section>
-         <!---->  <frame style="border: 1px solid rgba(0, 0, 0, 0.1);" width="1200
-           " height="450" src="https://embed.figma.com/design/1orvcbfF1Z6y2TM3qepcLr/JS-Class-Vehicle?node-id=0-1&embed-host=share" allowfullscreen></iframe>
-           <div class="vehicle">
-            <header>
-                <figure class="logo"></figure>
-                <button class="mode"></button>
-            </header>
-            <nav>
-                <button class="prev"></button>
-                <figure class="brand"></figure>
-                <button class="next"></button>
-            </nav>
-           </div>
+            <!-- <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="450" src="https://embed.figma.com/design/anglB0Wvf3I7AvVr8cJfKr/JS-Class-Vehicle?node-id=0-1&embed-host=share" allowfullscreen></iframe> -->
+             <div class="vehicle">
+                <header>
+                    <figure class="logo"></figure>
+                    <button class="mode"></button>
+                </header>
+                <nav>
+                    <button class="prev"></button>
+                    <figure class="brand label"></figure>
+                    <button class="next"></button>
+                </nav>
+                <div>
+                    <figure class="model label"></figure>
+                    <figure class="reference label"></figure>
+                    <figure class="color label"></figure>
+                </div>
+                <figure class="landscape">
+                    <div class="frame">
+                        <div class="layer sky"></div>
+                        <div class="layer mountains"></div>
+                        <div class="layer route"></div>
+                        <img src="" class="image">
+                    </div>
+                </figure>
+                <menu>
+                    <button class="btn-on"></button>
+                    <button class="btn-forward"></button>
+                    <button class="btn-stop"></button>
+                    <button class="btn-backward"></button>
+                    <button class="btn-off"></button>
+                </menu>
+             </div>
         </section>
     </main>
     <script>
-        const vhc         = document.querySelector('.vehicle')
-        const mode = document.querySelector('.mode');
+        // Elements
+        const vhc     = document.querySelector('.vehicle');
+        const mode    = document.querySelector('.mode'); 
+        const layers  = document.querySelectorAll('.layer')
 
-        //Detect Dark Mode
+        // Labels (Attributes)
+        const lbrand = document.querySelector('.brand'); 
+        const lmodel = document.querySelector('.model'); 
+        const lrefer = document.querySelector('.reference'); 
+        const lcolor = document.querySelector('.color'); 
+        const limage = document.querySelector('.image'); 
+
+        // Buttons
+        const btnNext  = document.querySelector('.next'); 
+        const btnPrev  = document.querySelector('.prev'); 
+        // ---
+        const btnOn    = document.querySelector('.btn-on'); 
+        const btnForw  = document.querySelector('.btn-forward'); 
+        const btnStop  = document.querySelector('.btn-stop'); 
+        const btnBack  = document.querySelector('.btn-backward'); 
+        const btnOff   = document.querySelector('.btn-off'); 
+
+        // Variables
+        let index = 0; 
+
+        // Object 
+        const vehicles = {
+            attrs: [
+                { brand: 'Ferrari', refer: 'SF90 XX ',model: '2026', color: 'White',   image: 'imgs/vehicle/ferrari2.svg' },
+                { brand: 'Ferrari', refer: 'LaFerrari',model: '2024', color: 'Red',     image: 'imgs/vehicle/ferrari1.svg' },
+                { brand: 'Ferrari',        refer: '296 GTB',   model: '2025', color: 'Lime',    image: 'imgs/vehicle/ferrari3.svg' },
+                { brand: 'Ferrari',     refer: '12Cilindri',      model: '2022', color: 'SkyBlue', image: 'imgs/vehicle/ferrari4.svg' },
+                { brand: 'Ferrari',     refer: 'F40', model: '2018', color: 'Silver',  image: 'imgs/vehicle/ferrari5.svg' }
+            ]
+        };
+
+        // Class 
+        class Vehicle {
+            constructor(brand, refer, model, color, image) {
+                this.brand = brand;
+                this.refer = refer;
+                this.model = model;
+                this.color = color;
+                this.image = image;
+                this.isOn          = false;
+                this.isPaused      = true;
+                this.isReversed    = false;
+                this.lastTimestamp = 0;
+                this.displayData();
+                this.disabledButton(btnPrev);
+            }
+            disabledButton(btn) {
+                btn.style.pointerEvents = 'none';
+                btn.style.opacity = '0.2';
+            }
+            enabledButton(btn) {
+                btn.style.pointerEvents = 'all';
+                btn.style.opacity = '1';
+            }
+            displayData() {
+                lbrand.textContent = this.brand;
+                lmodel.textContent = this.model;
+                lrefer.textContent = this.refer;
+                lcolor.textContent = this.color;
+                limage.src         = this.image;
+                //console.table(vehicles.attrs);
+            }
+            powerOn() {
+                if(!this.isOn) {
+                    this.isOn = true;
+                    requestAnimationFrame(vibrate);
+                }
+            }
+            powerOff() {
+                if(this.isOn && this.isPaused) {
+                    this.isOn = false;
+                    requestAnimationFrame(vibrate);
+                }
+            }
+            forward() {
+                if(this.isOn && this.isPaused) {
+                    this.lastTimestamp = 0;
+                    this.isPaused      = false;
+                    this.isReversed    = false;
+                    requestAnimationFrame(animateParallax);
+                }
+            }
+            backward() {
+                if(this.isOn && this.isPaused) {
+                    this.lastTimestamp = 0;
+                    this.isReversed    = true;
+                    this.isPaused      = false;
+                    requestAnimationFrame(animateParallax);
+                }
+            }
+            stop() {
+                if(this.isOn && !this.isPaused) {
+                    this.lastTimestamp = 0;
+                    this.isPaused = true;
+                }
+            }
+        }
+        car = new Vehicle(vehicles.attrs[index].brand, 
+                    vehicles.attrs[index].refer, 
+                    vehicles.attrs[index].model, 
+                    vehicles.attrs[index].color, 
+                    vehicles.attrs[index].image);
+
+        // Detect Dark Mode
         const darkMode    = window.matchMedia('(prefers-color-scheme: dark)');
         const updateTheme = (e) => vhc.classList.toggle('dark', e.matches);
         updateTheme(darkMode);
-
-        //Events
-
+        
+        // Events
         darkMode.addEventListener('change', updateTheme);
         mode.addEventListener('click', function() {
             vhc.classList.toggle('dark');
+        });
+
+        btnNext.addEventListener('click', function() {
+            if (index < (vehicles.attrs.length)-1 ) {
+                car.brand = vehicles.attrs[++index].brand;
+                car.model = vehicles.attrs[index].model;
+                car.refer = vehicles.attrs[index].refer;
+                car.color = vehicles.attrs[index].color;
+                car.image = vehicles.attrs[index].image;
+                car.displayData();
+                car.enabledButton(btnPrev);
+                if (index == (vehicles.attrs.length)-1) {
+                    car.disabledButton(btnNext);
+                }
+            }
+        });
+        btnPrev.addEventListener('click', function() {
+            if (index > 0) {
+                car.brand = vehicles.attrs[--index].brand;
+                car.model = vehicles.attrs[index].model;
+                car.refer = vehicles.attrs[index].refer;
+                car.color = vehicles.attrs[index].color;
+                car.image = vehicles.attrs[index].image;
+                car.displayData();
+                car.enabledButton(btnNext);
+                if (index == 0) {
+                    car.disabledButton(btnPrev);
+                }
+            }
+        });
+        btnOn.addEventListener('click', function() {
+            car.powerOn();
+        });
+        btnForw.addEventListener('click', function() {
+            car.forward();
+        });
+        btnStop.addEventListener('click', function() {
+            car.stop();
+        });
+        btnBack.addEventListener('click', function() {
+            car.backward();
+        });
+        btnOff.addEventListener('click', function() {
+            car.powerOff();
+        });
+
+        // Functions
+        function vibrate() {
+            if(!car.isOn) return;
+            limage.style.transform = `translate(0, 
+                                      ${1 * Math.sin(Date.now() / 25)}px)`;
+            requestAnimationFrame(vibrate);
+        }
+        // Function Animate Parallax
+        const speedFactors  = [0.04, 0.08, 0.25]
+        layers.forEach(layer => {
+            layer.dataset.pos = '0'
         })
-        
+        function animateParallax(timestamp) {
+            if (!car.isPaused) {
+                const delta   = timestamp - (car.lastTimestamp || timestamp)
+                car.lastTimestamp = timestamp
+
+                layers.forEach((layer, index) => {
+                let currentPos = (parseFloat(layer.dataset.pos) || 0) 
+                                 + speedFactors[index] 
+                                 * (car.isReversed ? delta : -delta)
+                layer.style.backgroundPositionX = `${currentPos}px`
+                layer.dataset.pos = currentPos
+                })
+            }
+            requestAnimationFrame(animateParallax)
+        }
+
     </script>
-              
-    
 </body>
 </html>
