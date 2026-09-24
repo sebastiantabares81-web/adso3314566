@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08 - Functions</title>
+    <link rel="stylesheet" href="../src/css/04-js.css">
+    <style>
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem;
+            strong,
+            output {
+                font-size: 1.6rem;
+            }
+            input {
+                border-radius: 0.4rem;
+                border: none;
+                padding: 0.4rem;
+                width: 100px;
+            }
+        }
+        h4 {
+            font-size: 1.4rem;
+            margin-block: 1.2rem;
+        }
+    </style>
+    
+</head>
+<body>
+    <main class="document-page"> 
+        <a href="./index.html" class="boton-volver">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#000000" viewBox="0 0 256 256" >
+                <path
+                    d="M232,56A104.11,104.11,0,0,1,128,160H51.31l34.35,34.34a8,8,0,0,1-11.32,11.32l-48-48a8,8,0,0,1,0-11.32l48-48a8,8,0,0,1,11.32,11.32L51.31,144H128a88.1,88.1,0,0,0,88-88,8,8,0,0,1,16,0Z">
+                </path>
+            </svg>
+        </a>
+        <header>
+            <h1>08 - Functions</h1>
+            <h2>Define y usa bloques de código reutilizables.</h2>
+        </header>
+       <section>
+            <h3>01- Function without params/args</h3>
+            <h4 class="greeting"></h4>
+            <h3>02- Function with params/args</h3>
+            <form>
+                <input type="number" id="n1" min="1" max="999" placeholder="Number 1">
+                <strong>+</strong>
+                <input type="number" id="n2" min="1" max="999" placeholder="Number 2">
+                <strong>=</strong>
+                <output></output>
+            </form>
+            <h3>03- Function return value</h3>
+            <h4 class="time"></h4>
+        </section>
+    </main>
+   <script>
+      //Elements
+      const greeting = document.querySelector('.greeting');
+      const n1       = document.querySelector('#n1');
+      const n2       = document.querySelector('#n2');
+      const output   = document.querySelector('output');
+      const time     = document.querySelector('.time');
+
+      //01 - Function without parameters/arguments
+      function showGreeting() {
+        greeting.textContent = '👻Hello Javascript👻'
+      }
+      showGreeting(); //Coll to function
+
+      //02 Function with parameters/arguments
+      function showSum(n1 = 1, n2) {
+        output.textContent = parseInt(n1) + parseInt(n2);
+
+      }
+
+      //Events
+      n1.addEventListener('input', () => {
+        showSum(n1.value, n2.value);
+      });
+
+      n2.addEventListener('input', () => {
+        showSum(n1.value, n2.value);
+      });
+
+      //03 function return value
+      function showTime() {
+        const ndate =  new Date;
+        console.log(ndate.getHours() + ':' + ndate.getMinutes())
+        return ndate.toLocaleTimeString();
+      }
+      time.textContent = showTime();
+      time.style.zoom =2;
+    </script>
+
+</body>
+</html>
